@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Toyota</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <nav>
+    <a href="cars.html">Cars</a>
+    <a href="index.html">Home</a>
+  </nav>
+
+  <section id="toyota">
+    
+    <div class="center-content">
+      <h2>Toyota</h2>
+      <img src="https://www.motortrend.com/uploads/sites/10/2021/09/2022-toyota-corolla-hybrid-le-sedan-angular-front.png" alt="Toyota Logo" width="700">
+      <div class="car-description">
+        <p>Toyota is a Japanese multinational automotive manufacturer known for its reliable and fuel-efficient vehicles. The company offers a diverse lineup of cars, trucks, SUVs, hybrids, and electric vehicles. Toyota vehicles are recognized for their durability, safety features, and commitment to innovation.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    // Function to display personalized greeting
+    function displayGreeting() {
+      const savedName = localStorage.getItem('username');
+      if (savedName) {
+        const greetingElement = document.createElement('p');
+        greetingElement.textContent = `Aren't the cars cool, ${savedName}?`;
+        greetingElement.style.position = 'fixed';
+        greetingElement.style.bottom = '10px';
+        greetingElement.style.right = '10px';
+        greetingElement.style.backgroundColor = '#333';
+        greetingElement.style.color = '#fff';
+        greetingElement.style.padding = '5px 10px';
+        greetingElement.style.borderRadius = '5px';
+        document.body.appendChild(greetingElement);
+      }
+    }
+
+    // Check if name is already stored in local storage
+    displayGreeting();
+  </script>
+</body>
+
+</html>

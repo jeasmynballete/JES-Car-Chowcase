@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.E.S Car Showcase - Cars</title>
+    <style>
+        /* Resetting default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .car-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .car-logo {
+            margin: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .car-logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        .car-logo:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>J.E.S Car Showcase</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="cars.html">Cars</a>
+    </nav>
+
+    <div class="container">
+        <div class="car-logos">
+            <div class="car-logo">
+                <a href="toyotaa.html"><img src="https://1000logos.net/wp-content/uploads/2018/02/Toyota-logo.png" alt="Toyota Logo"></a>
+            </div>
+            <div class="car-logo">
+                <a href="honda.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Honda.svg/2560px-Honda.svg.png" alt="Honda Logo"></a>
+            </div>
+            <div class="car-logo">
+                <a href="bmw.html"><img src="https://seeklogo.com/images/B/bmw-logo-248C3D90E6-seeklogo.com.png" alt="BMW Logo"></a>
+            </div>
+            <div class="car-logo">
+                <a href="mercedes.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1024px-Mercedes-Logo.svg.png" alt="Mercedes-Benz Logo"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Honda</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <nav>
+    <a href="cars.html">Cars</a>
+    <a href="index.html">Home</a>
+  </nav>
+
+  <section id="honda">
+    <div class="center-content">
+    <h2>Honda</h2>
+    <img src="https://images.summitmedia-digital.com/topgear/images/2021/11/23/honda-civic-red-2022-main-1637644905.jpg" alt="Honda Logo" width="700">
+    <div class="car-description">
+    <p>Honda is a Japanese multinational corporation specializing in automobiles, motorcycles, and power equipment. The company is known for producing reliable and fuel-efficient vehicles, including sedans, SUVs, hybrids, and electric cars. Honda vehicles are celebrated for their performance, durability, and advanced technology.</p>
+      </div>
+      </div>
+  <script src="script.js"></script>
+    <script>
+      // Function to display personalized greeting
+      function displayGreeting() {
+        const savedName = localStorage.getItem('username');
+        if (savedName) {
+          const greetingElement = document.createElement('p');
+          greetingElement.textContent = `Aren't the cars cool, ${savedName}?`;
+          greetingElement.style.position = 'fixed';
+          greetingElement.style.bottom = '10px';
+          greetingElement.style.right = '10px';
+          greetingElement.style.backgroundColor = '#333';
+          greetingElement.style.color = '#fff';
+          greetingElement.style.padding = '5px 10px';
+          greetingElement.style.borderRadius = '5px';
+          document.body.appendChild(greetingElement);
+        }
+      }
+
+      // Check if name is already stored in local storage
+      displayGreeting();
+    </script>
+</body>
+
+</html>

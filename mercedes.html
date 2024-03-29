@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Mercedes-Benz</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <nav>
+    <a href="cars.html">Cars</a>
+    <a href="index.html">Home</a>
+  </nav>
+
+  <section id="mercedes">
+    <div class="center-content">
+    <h2>Mercedes-Benz</h2>
+    <img src="https://images.drive.com.au/driveau/image/upload/t_wp-default/v1/cms/uploads/k3dd7jm4pkhmvcxt0kpq" alt="Mercedes-Benz Logo" width="700">
+    <div class="car-description">
+    <p>Mercedes-Benz is a luxury automobile manufacturer based in Germany. The company produces a wide range of vehicles, including luxury sedans, SUVs, coupes, convertibles, and electric cars. Mercedes-Benz vehicles are synonymous with elegance, comfort, and cutting-edge technology, making them a top choice for discerning customers worldwide.</p>
+      </div>
+      </div>
+  <script src="script.js"></script>
+    <script>
+      // Function to display personalized greeting
+      function displayGreeting() {
+        const savedName = localStorage.getItem('username');
+        if (savedName) {
+          const greetingElement = document.createElement('p');
+          greetingElement.textContent = `Aren't the cars cool, ${savedName}?`;
+          greetingElement.style.position = 'fixed';
+          greetingElement.style.bottom = '10px';
+          greetingElement.style.right = '10px';
+          greetingElement.style.backgroundColor = '#333';
+          greetingElement.style.color = '#fff';
+          greetingElement.style.padding = '5px 10px';
+          greetingElement.style.borderRadius = '5px';
+          document.body.appendChild(greetingElement);
+        }
+      }
+
+      // Check if name is already stored in local storage
+      displayGreeting();
+    </script>
+</body>
+
+</html>
