@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="icon" href="/favicon.ico">
+
+    <title>J.E.S Car Showcase</title>
+    <style>
+        /* Resetting default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .hero {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-content {
+            z-index: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+        }
+
+        .about-section {
+            background-color: #fff;
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section h2 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .about-section p {
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin-bottom: 0;
+        }
+
+        /* Form styles */
+        .form-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-container input[type="text"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>J.E.S Car Showcase</h1>
+    </header>
+
+    <nav>
+        <a href="cars.html">Cars</a>
+        <a href="index.html">Home</a>
+    </nav>
+
+    <div class="hero">
+        <video autoplay loop muted playsinline>
+            <source src="coverr-close-up-of-cars-driving-9217-1080p.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Welcome to J.E.S Car Showcase</h1>
+            <p id="greeting">Explore the world of automotive excellence with us.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="about-section">
+            <h2>About Us</h2>
+            <p>J.E.S Car Showcase is more than just a display of cars; it's a celebration of automotive passion and innovation. Our mission is to bring together car enthusiasts, industry professionals, and the general public to experience the latest trends, cutting-edge technology, and timeless classics in the automotive world.</p>
+            <p>Whether you're a seasoned collector, a curious enthusiast, or simply someone who appreciates the artistry of automotive design, J.E.S Car Showcase offers something unique for everyone. Join us on a journey through the fascinating world of cars.</p>
+        </div>
+
+        <!-- Form for Name Input -->
+        <div class="form-container">
+            <label for="name">Enter Your Name:</label>
+            <input type="text" id="name" name="name">
+            <button onclick="saveName()">Save Name</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; J.E.S Car Showcase. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to save name to local storage
+        function saveName() {
+            const nameInput = document.getElementById('name');
+            const name = nameInput.value.trim();
+
+            if (name !== '') {
+                localStorage.setItem('username', name);
+                displayGreeting(name);
+            } else {
+                alert('Please enter your name.');
+            }
+        }
+
+        // Function to display personalized greeting
+        function displayGreeting(name) {
+            const greetingElement = document.getElementById('greeting');
+            greetingElement.textContent = `Explore the world of automotive excellence with us, ${name}.`;
+        }
+
+        // Check if name is already stored in local storage
+        const savedName = localStorage.getItem('username');
+        if (savedName) {
+            displayGreeting(savedName);
+        }
+    </script>
+</body>
+</html>
